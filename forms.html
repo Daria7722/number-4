@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Title</title>
+</head>
+<body>
+<h2>Веб-приложение должно поменять местами правую и левую часть
+картинки, либо верхнюю и нижнюю в зависимости от желания пользователя,
+нарисовать график распределения цветов исходной картинки</h2>
+ <form action="image_form" enctype="multipart/form-data" method="post">
+  <p>
+ Введите 0 или 1 в соответствии с нужной вам операцией
+   Какие части изображения поменять?
+   0—верхнюю и нижнюю, 1—правую и левую <br>
+ <input name="n" type="number" min="0" max="1" value = "0" />
+ </p>
+ <table>
+
+
+ </table>
+ <input name="files" type="file" multiple>
+ <p>
+ <input type="submit" value="Send" />
+ </p>
+ </form>
+{% if ready %}
+<table>
+{% for image in images %}
+<tr>
+ <td>
+ <img src = "{{ image }}">
+  <img src = "static/image_1.png">
+
+ </td>
+</tr>
+
+{% endfor %}
+</table>
+{% endif %}
+</body>
+</html>

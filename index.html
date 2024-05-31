@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>FastAPI Website Starter</title>
+ <link rel="stylesheet" type="text/css" href="/static/styles.css">
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+ <script>
+ var correctCaptcha = function(response) {
+ alert("grecaptcha is ready!");
+ document.getElementsByName('resp')[0].value = response;
+
+ };
+ </script>
+</head>
+<body>
+<div class="container mt-5">
+ <h1>Капча</h1>
+ <form method="post" action="/" enctype="multipart/form-data">
+ <div class="form-group">
+
+ </div>
+ <div class="form-group">
+
+ </div>
+ <div class="form-group">
+ <input type="hidden" class="form-control" id = "resp" name="resp" value = "0" required>
+ </div>
+ <div class="form-group">
+ <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LcF0eApAAAAAIb7b0MMwk82PUgFkiqSyZvlWgL0" data-callback="correctCaptcha"> </div>
+ </div>
+ <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+
+ <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+</div>
+</body>
+</html>
